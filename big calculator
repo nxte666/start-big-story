@@ -1,0 +1,56 @@
+from cProfile import label
+import tkinter
+from unittest import result
+window=tkinter.Tk()
+window.title("Калькулятор")
+window.geometry("300x300")
+window.configure(bg="silver")
+def add():
+    num_1=int(text_1.get())
+    num_2=int(text_2.get())
+    result=num_1+num_2
+    text_3.delete(0,"end")
+    text_3.insert(0,result)
+def sub():
+    num_1=int(text_1.get())
+    num_2=int(text_2.get())
+    result=num_1-num_2
+    text_3.delete(0,"end")
+    text_3.insert(0,result)
+def mul():
+    num_1=int(text_1.get())
+    num_2=int(text_2.get())
+    result=num_1*num_2
+    text_3.delete(0,"end")
+    text_3.insert(0,result)
+def div():
+    num_1=int(text_1.get())
+    num_2=int(text_2.get())
+    result=num_1/num_2
+    text_3.delete(0,"end")
+    text_3.insert(0,result)
+    
+
+button_add=tkinter.Button(window,text="+",width=2,height=2,command=add,highlightbackground="gold")
+button_add.place(x=95,y=110)
+button_sub=tkinter.Button(window,text="-",width=2,height=2,command=sub)
+button_sub.place(x=95,y=160)
+text_1=tkinter.Entry(window,width=20)
+text_1.place(x=50,y=22)
+text_1_label=tkinter.Label(window,text="Введите первое число")
+text_1_label.place(x=70,y=1)
+text_2=tkinter.Entry(window,width=20)
+text_2.place(x=50,y=70)
+text_2_label=tkinter.Label(window,text="Введите второе число")
+text_2_label.place(x=70,y=49)
+button_mul=tkinter.Button(window,text="*",width=2,height=2,command=mul)
+button_mul.place(x=150,y=110)
+button_div=tkinter.Button(window,text="/",width=2,height=2,command=div)
+button_div.place(x=150,y=160)
+text_3=tkinter.Entry(window,width=20)
+text_3.place(x=50,y=250)
+
+
+
+
+window.mainloop()
